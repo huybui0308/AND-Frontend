@@ -14,7 +14,7 @@ export const ScoreboardTable: React.FC<ScoreboardTableProps> = ({
   previousRanks,
 }) => {
   return (
-    <Card className="scoreboard-table-card" glass>
+    <Card className="scoreboard-table-card">
       <div className="scoreboard-table-wrapper">
         <table className="scoreboard-table">
           <thead>

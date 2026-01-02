@@ -4,25 +4,25 @@ import './Card.css';
 interface CardProps {
   children: ReactNode;
   className?: string;
-  glass?: boolean;
+ ?: boolean;
   elevated?: boolean;
-  hover?: boolean;
+ ?: boolean;
   onClick?: () => void;
 }
 
 export const Card: React.FC<CardProps> = ({
   children,
   className = '',
-  glass = false,
+  = false,
   elevated = false,
-  hover = false,
+  = false,
   onClick,
 }) => {
   const classes = [
     'card',
-    glass && 'card-glass',
+    && 'card-glass',
     elevated && 'card-elevated',
-    hover && 'card-hover',
+    && 'card-hover',
     onClick && 'card-clickable',
     className,
   ].filter(Boolean).join(' ');

@@ -67,7 +67,7 @@ export const CsvImport: React.FC<CsvImportProps> = ({ onImport, isLoading }) => 
   };
 
   return (
-    <Card className="csv-import-card" glass>
+    <Card className="csv-import-card">
       <div
         className={`csv-dropzone ${dragActive ? 'csv-dropzone-active' : ''}`}
         onDragEnter={handleDrag}
@@ -111,7 +111,7 @@ export const CsvImport: React.FC<CsvImportProps> = ({ onImport, isLoading }) => 
 
       {selectedFile && (
         <Button
-          variant="primary"
+          variant="default"
           fullWidth
           onClick={handleUpload}
           isLoading={isLoading}

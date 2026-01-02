@@ -89,7 +89,7 @@ export const CreateTeamPage: React.FC = () => {
               >
                 Cancel
               </Button>
-              <Button type="submit" variant="primary" isLoading={isLoading}>
+              <Button type="submit" variant="default" isLoading={isLoading}>
                 Create Team
               </Button>
             </div>
