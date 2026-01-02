@@ -1,7 +1,7 @@
 import { create } from 'zustand';
 import { Game, UploadResponse } from '../types';
 import { gameService } from '../services/gameService';
-import toast from 'react-hot-toast';
+import { toast } from 'sonner';
 
 interface GameState {
   game: Game | null;

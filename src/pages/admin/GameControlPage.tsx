@@ -37,7 +37,7 @@ export const GameControlPage: React.FC = () => {
 
         <div className="game-controls">
           <Button
-            variant="primary"
+            variant="default"
             size="lg"
             onClick={() => setStartConfirm(true)}
             disabled={!canStart || isLoading}
@@ -47,7 +47,7 @@ export const GameControlPage: React.FC = () => {
           </Button>
 
           <Button
-            variant="danger"
+            variant="destructive"
             size="lg"
             onClick={() => setStopConfirm(true)}
             disabled={!canStop || isLoading}
@@ -76,7 +76,7 @@ export const GameControlPage: React.FC = () => {
         title="Stop Game"
         message="Are you sure you want to stop the game? This will end the current round."
         confirmText="Stop Game"
-        variant="danger"
+        variant="destructive"
         isLoading={isLoading}
       />
     </PageLayout>

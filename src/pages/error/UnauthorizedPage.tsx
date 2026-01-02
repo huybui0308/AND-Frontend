@@ -9,7 +9,7 @@ export const UnauthorizedPage: React.FC = () => {
   return (
     <PageLayout>
       <div className="error-page">
-        <Card glass className="error-card">
+        <Card className="error-card">
           <div className="error-icon unauthorized">
             <ShieldAlert size={80} />
           </div>
@@ -19,7 +19,7 @@ export const UnauthorizedPage: React.FC = () => {
             You don't have permission to access this resource.
           </p>
           <Link to="/dashboard">
-            <Button variant="primary" size="lg">
+            <Button variant="default" size="lg">
               <Home size={20} />
               <span>Go to Dashboard</span>
             </Button>

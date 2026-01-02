@@ -68,7 +68,7 @@ export const FileUploader: React.FC<FileUploaderProps> = ({
   };
 
   return (
-    <Card className="file-uploader-card" glass>
+    <Card className="file-uploader-card">
       <h3>{title}</h3>
 
       <div
@@ -112,7 +112,7 @@ export const FileUploader: React.FC<FileUploaderProps> = ({
 
       {selectedFile && (
         <Button
-          variant="primary"
+          variant="default"
           fullWidth
           onClick={handleUpload}
           isLoading={isLoading}

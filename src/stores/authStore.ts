@@ -1,7 +1,7 @@
 import { create } from 'zustand';
 import { User, LoginRequest, SignupRequest } from '../types';
 import { authService } from '../services/authService';
-import toast from 'react-hot-toast';
+import { toast } from 'sonner';
 
 interface AuthState {
   user: User | null;

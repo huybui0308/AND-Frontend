@@ -1,7 +1,7 @@
 import { create } from 'zustand';
 import { Team, CreateTeamRequest, UpdateTeamRequest, TeamCreatedResponse } from '../types';
 import { teamService } from '../services/teamService';
-import toast from 'react-hot-toast';
+import { toast } from 'sonner';
 
 interface TeamState {
   teams: Team[];

@@ -30,7 +30,7 @@ export const SignupForm: React.FC = () => {
 
   return (
     <div className="auth-container">
-      <Card className="auth-card" glass>
+      <Card className="auth-card">
         <div className="auth-header">
           <div className="auth-icon">
             <UserPlus size={48} />
@@ -77,7 +77,7 @@ export const SignupForm: React.FC = () => {
 
           <Button
             type="submit"
-            variant="primary"
+            variant="default"
             size="lg"
             fullWidth
             isLoading={isLoading}

@@ -64,7 +64,7 @@ export const AdminDashboardPage: React.FC = () => {
         <div className="admin-cards-grid">
           {adminCards.map((card) => (
             <Link key={card.title} to={card.link} className="admin-card-link">
-              <Card glass hover className="admin-card">
+              <Card glass className="admin-card">
                 <CardHeader>
                   <div className="admin-card-icon" style={{ background: card.color }}>
                     <card.icon size={32} />

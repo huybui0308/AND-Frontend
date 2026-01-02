@@ -25,7 +25,7 @@ export const DashboardPage: React.FC = () => {
         <div className="dashboard-grid">
           {myTeam ? (
             <>
-              <Card glass>
+              <Card>
                 <CardHeader>
                   <h3>
                     <Trophy size={24} />
@@ -40,7 +40,7 @@ export const DashboardPage: React.FC = () => {
                 </CardBody>
               </Card>
 
-              <Card glass>
+              <Card>
                 <CardHeader>
                   <h3>
                     <Target size={24} />
@@ -55,7 +55,7 @@ export const DashboardPage: React.FC = () => {
                 </CardBody>
               </Card>
 
-              <Card glass>
+              <Card>
                 <CardHeader>
                   <h3>Points Breakdown</h3>
                 </CardHeader>
@@ -83,7 +83,7 @@ export const DashboardPage: React.FC = () => {
                 </CardBody>
               </Card>
 
-              <Card glass>
+              <Card>
                 <CardHeader>
                   <h3>Flags</h3>
                 </CardHeader>
@@ -104,7 +104,7 @@ export const DashboardPage: React.FC = () => {
               </Card>
             </>
           ) : (
-            <Card glass>
+            <Card>
               <CardBody>
                 <div className="dashboard-empty">
                   <Users size={48} />
@@ -115,7 +115,7 @@ export const DashboardPage: React.FC = () => {
           )}
         </div>
 
-        <Card glass className="team-info-card">
+        <Card className="team-info-card">
           <CardHeader>
             <h3>Team Information</h3>
           </CardHeader>

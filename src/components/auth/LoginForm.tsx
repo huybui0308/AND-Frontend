@@ -1,11 +1,14 @@
 import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
-import { LogIn, User, Lock } from 'lucide-react';
+import { LogIn, User, Lock, Info } from 'lucide-react';
 import { useAuthStore } from '../../stores/authStore';
-import { Button, Input, Card } from '../common';
+import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
+import { Label } from '@/components/ui/label';
+import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
+import { Alert, AlertDescription } from '@/components/ui/alert';
 import { LoginRequest } from '../../types';
-import './AuthForms.css';
 
 export const LoginForm: React.FC = () => {
   const navigate = useNavigate();
@@ -29,60 +32,83 @@ export const LoginForm: React.FC = () => {
   };
 
   return (
-    <div className="auth-container">
-      <Card className="auth-card" glass>
-        <div className="auth-header">
-          <div className="auth-icon">
-            <LogIn size={48} />
+    <div className="flex min-h-screen items-center justify-center bg-gradient-to-br from-slate-50 to-slate-100 px-4">
+      <Card className="w-full max-w-md">
+        <CardHeader className="space-y-1 text-center">
+          <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-primary/10">
+            <LogIn className="h-8 w-8 text-primary" />
           </div>
-          <h2 className="auth-title">Login</h2>
-          <p className="auth-subtitle">Access the CTF platform</p>
-        </div>
+          <CardTitle className="text-2xl font-bold">Login</CardTitle>
+          <CardDescription>Access the CTF platform</CardDescription>
+        </CardHeader>
 
-        <form onSubmit={handleSubmit(onSubmit)} className="auth-form">
-          <Input
-            label="Username"
-            type="text"
-            placeholder="Enter your username"
-            icon={<User size={20} />}
-            error={errors.username?.message}
-            {...register('username', {
-              required: 'Username is required',
-            })}
-          />
+        <CardContent>
+          <Alert className="mb-4 border-blue-200 bg-blue-50">
+            <Info className="h-4 w-4 text-blue-600" />
+            <AlertDescription className="text-sm text-blue-900">
+              <strong>Test Accounts:</strong> teacher/teacher123, student/student123, admin/admin123
+            </AlertDescription>
+          </Alert>
 
-          <Input
-            label="Password"
-            type="password"
-            placeholder="Enter your password"
-            icon={<Lock size={20} />}
-            error={errors.password?.message}
-            {...register('password', {
-              required: 'Password is required',
-            })}
-          />
+          <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
+            <div className="space-y-2">
+              <Label htmlFor="username">Username</Label>
+              <div className="relative">
+                <User className="absolute left-3 top-3 h-4 w-4 text-muted-foreground" />
+                <Input
+                  id="username"
+                  type="text"
+                  placeholder="Enter your username"
+                  className="pl-10"
+                  {...register('username', {
+                    required: 'Username is required',
+                  })}
+                />
+              </div>
+              {errors.username && (
+                <p className="text-sm text-destructive">{errors.username.message}</p>
+              )}
+            </div>
 
-          {error && <div className="auth-error">{error}</div>}
+            <div className="space-y-2">
+              <Label htmlFor="password">Password</Label>
+              <div className="relative">
+                <Lock className="absolute left-3 top-3 h-4 w-4 text-muted-foreground" />
+                <Input
+                  id="password"
+                  type="password"
+                  placeholder="Enter your password"
+                  className="pl-10"
+                  {...register('password', {
+                    required: 'Password is required',
+                  })}
+                />
+              </div>
+              {errors.password && (
+                <p className="text-sm text-destructive">{errors.password.message}</p>
+              )}
+            </div>
 
-          <Button
-            type="submit"
-            variant="primary"
-            size="lg"
-            fullWidth
-            isLoading={isLoading}
-          >
-            Login
-          </Button>
-        </form>
+            {error && (
+              <Alert variant="destructive">
+                <AlertDescription>{error}</AlertDescription>
+              </Alert>
+            )}
 
-        <div className="auth-footer">
-          <p>
+            <Button type="submit" className="w-full" size="lg" disabled={isLoading}>
+              {isLoading ? 'Logging in...' : 'Login'}
+            </Button>
+          </form>
+        </CardContent>
+
+        <CardFooter className="flex justify-center">
+          <p className="text-sm text-muted-foreground">
             Don't have an account?{' '}
-            <Link to="/signup" className="auth-link">
+            <Link to="/signup" className="font-medium text-primary:underline">
               Sign up
             </Link>
           </p>
-        </div>
+        </CardFooter>
       </Card>
     </div>
   );

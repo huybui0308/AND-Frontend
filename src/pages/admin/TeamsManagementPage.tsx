@@ -39,7 +39,7 @@ export const TeamsManagementPage: React.FC = () => {
       <div className="teams-management-page">
         <div className="teams-actions">
           <Link to="/admin/teams/new">
-            <Button variant="primary">
+            <Button variant="default">
               <Plus size={20} />
               <span>Create Team</span>
             </Button>
@@ -52,12 +52,12 @@ export const TeamsManagementPage: React.FC = () => {
           </Link>
         </div>
 
-        <Card glass className="teams-table-card">
+        <Card className="teams-table-card">
           {teams.length === 0 ? (
             <div className="teams-empty">
               <p>No teams registered yet</p>
               <Link to="/admin/teams/new">
-                <Button variant="primary">Create First Team</Button>
+                <Button variant="default">Create First Team</Button>
               </Link>
             </div>
           ) : (
@@ -115,7 +115,7 @@ export const TeamsManagementPage: React.FC = () => {
         title="Delete Team"
         message={`Are you sure you want to delete team "${deleteConfirm.team?.name}"? This action cannot be undone.`}
         confirmText="Delete"
-        variant="danger"
+        variant="destructive"
         isLoading={isLoading}
       />
     </PageLayout>

@@ -44,7 +44,7 @@ export const GameStatusCard: React.FC<GameStatusCardProps> = ({ game, isLoading 
 
   if (isLoading) {
     return (
-      <Card className="game-status-card" glass>
+      <Card className="game-status-card">
         <div className="game-status-loading">Loading game status...</div>
       </Card>
     );
@@ -52,14 +52,14 @@ export const GameStatusCard: React.FC<GameStatusCardProps> = ({ game, isLoading 
 
   if (!game) {
     return (
-      <Card className="game-status-card" glass>
+      <Card className="game-status-card">
         <div className="game-status-empty">No game configured</div>
       </Card>
     );
   }
 
   return (
-    <Card className="game-status-card" glass>
+    <Card className="game-status-card">
       <div className="game-status-header">
         <h3 className="game-name">{game.name}</h3>
         <div

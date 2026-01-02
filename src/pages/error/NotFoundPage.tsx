@@ -9,7 +9,7 @@ export const NotFoundPage: React.FC = () => {
   return (
     <PageLayout>
       <div className="error-page">
-        <Card glass className="error-card">
+        <Card className="error-card">
           <div className="error-icon">
             <AlertCircle size={80} />
           </div>
@@ -19,7 +19,7 @@ export const NotFoundPage: React.FC = () => {
             The page you're looking for doesn't exist or has been moved.
           </p>
           <Link to="/">
-            <Button variant="primary" size="lg">
+            <Button variant="default" size="lg">
               <Home size={20} />
               <span>Back to Home</span>
             </Button>
