@@ -1,0 +1,60 @@
+import React from 'react';
+import { Modal } from './Modal';
+import { Button } from './Button';
+import { AlertTriangle } from 'lucide-react';
+import './ConfirmDialog.css';
+
+interface ConfirmDialogProps {
+  isOpen: boolean;
+  onClose: () => void;
+  onConfirm: () => void;
+  title?: string;
+  message: string;
+  confirmText?: string;
+  cancelText?: string;
+  variant?: 'danger' | 'warning' | 'info';
+  isLoading?: boolean;
+}
+
+export const ConfirmDialog: React.FC<ConfirmDialogProps> = ({
+  isOpen,
+  onClose,
+  onConfirm,
+  title = 'Confirm Action',
+  message,
+  confirmText = 'Confirm',
+  cancelText = 'Cancel',
+  variant = 'danger',
+  isLoading = false,
+}) => {
+  const handleConfirm = () => {
+    onConfirm();
+  };
+
+  return (
+    <Modal isOpen={isOpen} onClose={onClose} title={title} size="sm">
+      <div className="confirm-dialog">
+        <div className={`confirm-dialog-icon confirm-dialog-icon-${variant}`}>
+          <AlertTriangle size={48} />
+        </div>
+        <p className="confirm-dialog-message">{message}</p>
+        <div className="confirm-dialog-actions">
+          <Button
+            variant="ghost"
+            onClick={onClose}
+            disabled={isLoading}
+          >
+            {cancelText}
+          </Button>
+          <Button
+            variant={variant === 'danger' ? 'danger' : 'primary'}
+            onClick={handleConfirm}
+            isLoading={isLoading}
+          >
+            {confirmText}
+          </Button>
+        </div>
+      </div>
+    </Modal>
+  );
+};
