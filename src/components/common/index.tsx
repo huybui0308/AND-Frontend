@@ -36,6 +36,9 @@ export {
   AlertDialogTrigger
 } from '../ui/alert-dialog';
 
+// Export InputWithLabel for components that need label prop
+export { InputWithLabel } from './InputWithLabel';
+
 // Create a simple TextArea component using Input as base
 export interface TextAreaProps
   extends React.TextareaHTMLAttributes<HTMLTextAreaElement> {}
