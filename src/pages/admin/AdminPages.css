@@ -1,0 +1,252 @@
+.admin-dashboard-page {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xl);
+}
+
+.admin-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--spacing-lg);
+}
+
+.admin-card-link {
+  text-decoration: none;
+}
+
+.admin-card {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  transition: all var(--transition-base);
+}
+
+.admin-card:hover {
+  transform: translateY(-8px);
+}
+
+.admin-card-icon {
+  width: 80px;
+  height: 80px;
+  border-radius: var(--radius-lg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--bg-dark);
+  margin-bottom: var(--spacing-md);
+}
+
+.admin-card h3 {
+  font-size: 1.25rem;
+  margin-bottom: var(--spacing-sm);
+  color: var(--color-primary);
+}
+
+.admin-card-description {
+  color: var(--text-secondary);
+  font-size: 0.9375rem;
+  margin-bottom: var(--spacing-lg);
+}
+
+.admin-card-stat {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-top: auto;
+  padding-top: var(--spacing-md);
+  border-top: 1px solid rgba(0, 240, 255, 0.2);
+}
+
+.admin-card-value {
+  font-family: var(--font-mono);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.admin-card-label {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+}
+
+/* Teams Management */
+.teams-management-page {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xl);
+}
+
+.teams-actions {
+  display: flex;
+  gap: var(--spacing-md);
+  flex-wrap: wrap;
+}
+
+.teams-table-card {
+  padding: 0;
+  overflow: hidden;
+}
+
+.teams-table-wrapper {
+  overflow-x: auto;
+}
+
+.teams-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: var(--font-mono);
+  font-size: 0.875rem;
+}
+
+.teams-table thead {
+  background: var(--bg-elevated);
+  border-bottom: 2px solid var(--color-primary);
+}
+
+.teams-table th {
+  padding: var(--spacing-md) var(--spacing-lg);
+  text-align: left;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--color-primary);
+  white-space: nowrap;
+}
+
+.teams-table td {
+  padding: var(--spacing-md) var(--spacing-lg);
+  border-bottom: 1px solid rgba(0, 240, 255, 0.1);
+}
+
+.teams-table tbody tr:hover {
+  background: rgba(0, 240, 255, 0.05);
+}
+
+.team-name-col {
+  font-weight: 600;
+  color: var(--color-primary);
+}
+
+.ip-col {
+  font-family: var(--font-mono);
+}
+
+.actions-col {
+  display: flex;
+  gap: var(--spacing-sm);
+}
+
+.action-btn {
+  background: none;
+  border: none;
+  color: var(--text-secondary);
+  cursor: pointer;
+  padding: var(--spacing-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-sm);
+  transition: all var(--transition-fast);
+}
+
+.edit-btn:hover {
+  color: var(--color-primary);
+  background: rgba(0, 240, 255, 0.1);
+}
+
+.delete-btn:hover {
+  color: var(--color-error);
+  background: rgba(255, 68, 68, 0.1);
+}
+
+.teams-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-lg);
+  padding: var(--spacing-2xl);
+  text-align: center;
+}
+
+.teams-empty p {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+/* Team Form */
+.create-team-page,
+.import-teams-page {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.team-form-card {
+  padding: var(--spacing-xl);
+}
+
+.team-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+}
+
+.form-actions {
+  display: flex;
+  gap: var(--spacing-md);
+  justify-content: flex-end;
+  margin-top: var(--spacing-md);
+}
+
+/* Game Control */
+.game-control-page {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xl);
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.game-controls {
+  display: flex;
+  gap: var(--spacing-md);
+  justify-content: center;
+}
+
+/* Upload Files */
+.upload-files-page {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.upload-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: var(--spacing-xl);
+}
+
+@media (max-width: 768px) {
+  .admin-cards-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .teams-actions {
+    flex-direction: column;
+  }
+
+  .teams-actions button {
+    width: 100%;
+  }
+
+  .game-controls {
+    flex-direction: column;
+  }
+
+  .upload-grid {
+    grid-template-columns: 1fr;
+  }
+}

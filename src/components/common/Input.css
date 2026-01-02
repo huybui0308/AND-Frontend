@@ -1,0 +1,82 @@
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+  width: 100%;
+}
+
+.input-label {
+  font-family: var(--font-heading);
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-primary);
+}
+
+.input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.input-icon {
+  position: absolute;
+  left: var(--spacing-md);
+  color: var(--text-secondary);
+  display: flex;
+  align-items: center;
+  pointer-events: none;
+}
+
+.input {
+  width: 100%;
+  padding: var(--spacing-md);
+  background: var(--bg-elevated);
+  border: 2px solid rgba(0, 240, 255, 0.2);
+  border-radius: var(--radius-md);
+  color: var(--text-primary);
+  font-family: var(--font-mono);
+  font-size: 0.9375rem;
+  transition: all var(--transition-base);
+}
+
+.input-with-icon {
+  padding-left: calc(var(--spacing-xl) + var(--spacing-md));
+}
+
+.input::placeholder {
+  color: var(--text-muted);
+}
+
+.input:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: var(--border-glow);
+}
+
+.input:hover:not(:focus) {
+  border-color: rgba(0, 240, 255, 0.4);
+}
+
+.input-error {
+  border-color: var(--color-error);
+}
+
+.input-error:focus {
+  border-color: var(--color-error);
+  box-shadow: 0 0 10px rgba(255, 68, 68, 0.3);
+}
+
+.input-error-message {
+  font-size: 0.875rem;
+  color: var(--color-error);
+  font-weight: 500;
+}
+
+.input-textarea {
+  resize: vertical;
+  min-height: 100px;
+  font-family: var(--font-mono);
+  line-height: 1.5;
+}

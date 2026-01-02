@@ -1,0 +1,63 @@
+.scoreboard-table-card {
+  overflow: hidden;
+  padding: 0;
+}
+
+.scoreboard-table-wrapper {
+  overflow-x: auto;
+}
+
+.scoreboard-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: var(--font-mono);
+}
+
+.scoreboard-table thead {
+  background: var(--bg-elevated);
+  border-bottom: 2px solid var(--color-primary);
+}
+
+.scoreboard-table th {
+  padding: var(--spacing-md) var(--spacing-lg);
+  text-align: left;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--color-primary);
+  white-space: nowrap;
+}
+
+.scoreboard-table th:first-child {
+  text-align: center;
+}
+
+.scoreboard-table th:nth-child(3),
+.scoreboard-table th:nth-child(4),
+.scoreboard-table th:nth-child(5),
+.scoreboard-table th:nth-child(6),
+.scoreboard-table th:nth-child(7),
+.scoreboard-table th:nth-child(8) {
+  text-align: center;
+}
+
+.scoreboard-table tbody tr:last-child {
+  border-bottom: none;
+}
+
+@media (max-width: 768px) {
+  .scoreboard-table {
+    font-size: 0.875rem;
+  }
+
+  .scoreboard-table th,
+  .scoreboard-table td {
+    padding: var(--spacing-sm) var(--spacing-md);
+  }
+
+  .scoreboard-table th {
+    font-size: 0.75rem;
+  }
+}
