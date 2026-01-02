@@ -27,8 +27,6 @@ api.interceptors.request.use(
 api.interceptors.response.use(
   (response) => response,
   (error: AxiosError) => {
-    const message = (error.response?.data as any)?.message || error.message || 'An error occurred';
-    
     // Handle 401 Unauthorized
     if (error.response?.status === 401) {
       localStorage.removeItem('token');

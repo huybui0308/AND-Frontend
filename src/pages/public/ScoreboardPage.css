@@ -1,0 +1,79 @@
+.scoreboard-page {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xl);
+}
+
+.scoreboard-controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--spacing-lg);
+  background: var(--bg-card);
+  border: 1px solid rgba(0, 240, 255, 0.2);
+  border-radius: var(--radius-lg);
+  flex-wrap: wrap;
+  gap: var(--spacing-md);
+}
+
+.scoreboard-info {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-lg);
+  font-family: var(--font-mono);
+  font-size: 1rem;
+  color: var(--text-secondary);
+}
+
+.scoreboard-tick,
+.scoreboard-teams {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+}
+
+.scoreboard-info strong {
+  color: var(--color-primary);
+  font-size: 1.125rem;
+}
+
+.scoreboard-actions {
+  display: flex;
+  gap: var(--spacing-md);
+}
+
+.scoreboard-empty {
+  padding: var(--spacing-2xl);
+  text-align: center;
+  background: var(--bg-card);
+  border: 1px solid rgba(0, 240, 255, 0.2);
+  border-radius: var(--radius-lg);
+}
+
+.scoreboard-empty p {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .scoreboard-controls {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .scoreboard-info {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--spacing-sm);
+  }
+
+  .scoreboard-actions {
+    width: 100%;
+  }
+
+  .scoreboard-actions button {
+    flex: 1;
+  }
+}

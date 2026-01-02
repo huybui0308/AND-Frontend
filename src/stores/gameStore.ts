@@ -15,7 +15,7 @@ interface GameState {
   uploadVulnbox: (file: File) => Promise<UploadResponse>;
 }
 
-export const useGameStore = create<GameState>((set, get) => ({
+export const useGameStore = create<GameState>((set) => ({
   game: null,
   isLoading: false,
 
